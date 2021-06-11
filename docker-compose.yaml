@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+    app:
+        build: ./src
+        command: ["uvicorn", "app.main:app", "--reload", "--reload-dir", "app", "--workers", "1", "--host", "0.0.0.0"]
+        volumes:
+            - ./src:/usr/src/app
+        ports:
+            - 8000:8000
+        environment: 
+            - DATABASE_URL=sqlite:///./db/prod.db
+
+    test:
+        build: ./src
+        command: ["python", "-m", "pytest_watch", "--poll", "--ignore", "db"]
+        volumes:
+            - ./src:/usr/src/app
+        environment: 
+            - DATABASE_URL=sqlite:///./db/test.db

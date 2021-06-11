@@ -1,0 +1,22 @@
+### Web framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+### Database
+sqlalchemy
+sqlalchemy-utils
+alembic
+
+### Auth / JWT
+python-jose[cryptography]
+passlib
+bcrypt
+
+### Testing
+pytest
+pytest-watch
+requests
+
+### Debug while exec into container (can delete this to save space)
+ipython
