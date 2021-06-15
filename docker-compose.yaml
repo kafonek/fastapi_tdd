@@ -9,6 +9,7 @@ services:
         ports:
             - 8000:8000
         environment: 
+            # note three slashes for sqlite relative path
             - DATABASE_URL=sqlite:///./db/prod.db
 
     test:
@@ -18,3 +19,11 @@ services:
             - ./src:/usr/src/app
         environment: 
             - DATABASE_URL=sqlite:///./db/test.db
+
+    jupyter:
+        build: ./jupyter
+        volumes:
+            - ./jupyter/notebooks:/home/jovyan/notebooks
+            - ./src:/home/jovyan/src
+        ports:
+            - 8888:8888

@@ -1,0 +1,28 @@
+### for being able to import from app
+fastapi
+python-multipart
+python-jose[cryptography]
+
+### for querying database
+sqlalchemy
+sqlalchemy-utils
+pydantic
+
+### for creating users
+passlib
+bcrypt
+
+### for interacting with endpoints
+httpx
+
+### for creating/running tests
+pytest
+starlette
+requests
+
+### nb-extensions
+jupyter-contrib-nbextensions
+jupyter-nbextensions-configurator
+
+### useful jupyter things
+nb_black
